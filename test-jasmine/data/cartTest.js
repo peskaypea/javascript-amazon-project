@@ -1,4 +1,4 @@
-import {addToCart, cart, loadFromStorgage} from '../../data/cart.js'
+import {addToCart, cart, loadFromStorage} from '../../data/cart.js'
 
 
 describe('Test suit: addToCart', () => {
@@ -12,7 +12,7 @@ describe('Test suit: addToCart', () => {
                 deliveryOptionId: "1"
             }]);
         });
-        loadFromStorgage();
+        loadFromStorage();
 
 
         addToCart('e43638ce-6aa0-4b85-b27f-e1d07eb678c6');
@@ -29,13 +29,12 @@ describe('Test suit: addToCart', () => {
         spyOn(localStorage, 'getItem').and.callFake(() => {
             return JSON.stringify([]);
         });
-        loadFromStorgage();
+        loadFromStorage();
         addToCart('e43638ce-6aa0-4b85-b27f-e1d07eb678c6');
         expect(cart.length).toEqual(1);
         expect(localStorage.setItem).toHaveBeenCalledTimes(1);
         expect(cart[0].productId).toEqual('e43638ce-6aa0-4b85-b27f-e1d07eb678c6');
         expect(cart[0].quantity).toEqual(1);
-        console.log('test')
     })
     
 })
