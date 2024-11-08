@@ -1,4 +1,4 @@
-import formatCurrency from "../scripts/utils/money";
+import formatCurrency from '../scripts/utils/money.js';
 
 export function getProduct(productId) {
   let matchingProduct;
@@ -57,6 +57,13 @@ class Clothing extends Product{
     `;
   }
 }
+
+// const date = new Date()
+// console.log(date);
+// console.log(date.toLocaleDateString())
+
+console.log(this);
+
 
 export const products = [
   {
